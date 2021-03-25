@@ -16,7 +16,7 @@ Listagem das tags
     <tbody>
     {% for i in argo %}
     <tr>
-        <td><a href="{% url 'listar_pais_id' i.id %}">{{i.nome}}</a></td>
+        <td><a href="{% url 'listar_tag_id' i.id %}">{{i.nome}}</a></td>
         <td>{{i.descricao}}</td>
         <td>
             <a href="">Editar</a>
