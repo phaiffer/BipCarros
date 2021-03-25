@@ -1,0 +1,34 @@
+{% extends "twitter/base.html" %}
+
+{% block titulo %}
+Listagem das tags
+{% endblock titulo %}
+
+{% block conteudo %}
+<table class="table">
+    <thread>
+        <tr>
+            <th>Tags</th>
+            <th>Resultado</th>
+            <th>Ações</th>
+        <tr>
+    </thread>
+    <tbody>
+    {% for i in argo %}
+    <tr>
+        <td><a href="{% url 'listar_pais_id' i.id %}">{{i.nome}}</a></td>
+        <td>{{i.descricao}}</td>
+        <td>
+            <a href="">Editar</a>
+            <a href="">Remover</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'cadastrar_pais' %}">
+    <button class="btn btn-primary">Cadastrar</button>
+</a>
+<a href="{% url 'listar_estado' %}"><buttom class="btn btn-primary">Estado</buttom></a>
+
+{% endblock conteudo %}
