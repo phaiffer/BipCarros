@@ -17,9 +17,3 @@ def remover(argo):
 
 def cadastrar(argo):
     Argo.objects.create(nome=argo.nome, descricao=argo.descricao)
-
-
-def editar(argo, argo_novo):
-    argo.nome = argo_novo.nome
-    argo.descricao = argo_novo.descricao
-    argo.save(force_update=True)
