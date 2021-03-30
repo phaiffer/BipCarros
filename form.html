@@ -1,0 +1,29 @@
+{% extends "twitter/base.html" %}
+
+{% block titulo %}
+Cadastro de Tags
+{% endblock titulo %}
+
+{% block conteudo %}
+<form method="post">
+    <!--Aqui eu faço a validação dos dados inseridos no banco com um parametro em python -->
+    {% csrf_token %}
+    <!--Aqui é onde eu pego tag que eu quero inserir no meu banco-->
+    <div class="form-group">
+        {{ form.nome.errors }}
+        <label>Tag: </label>
+        <input type="text" value="{{tag.nome}}" name="nome" class="form-control">
+    </div>
+    <!--Aqui é onde eu pego o resultado da tag-->
+    <div class="form-group">
+        {{ form.descricao.errors }}
+        <label>Descricao: </label>
+        <input type="text" value="{{tag.descricao}}" name="descricao" class="form-control">
+    </div>
+    <!--Aqui é onde ficam os botoes para voltar para a instancia anterior ou cadastrar a tag-->
+    <div class="form-group">
+        <a href="{% url 'listar' %}" class="btn btn-primary">Voltar</a>
+        <button class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>
+{% endblock conteudo %}

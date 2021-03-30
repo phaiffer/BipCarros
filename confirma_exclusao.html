@@ -1,0 +1,23 @@
+{% extends "twitter/base.html" %}
+
+{% block titulo %}
+Remoção
+{% endblock titulo %}
+
+{% block conteudo %}
+<div class="card">
+    <div class="card-header">
+        Tem certeza que deseja remover o item abaixo?
+    </div>
+    <div class="card-body">
+        <h3>{{msg}}</h3>
+        <h5 class="card-title">Tag: {{ object.tag }}</h5>
+        <h5 class="card-title">Descricao: {{ object.descricao }}</h5>
+        <form method="post">
+            {% csrf_token %}
+            <a href="{% url 'listar' %}" class="btn btn-primary">Voltar</a>
+            <button class="btn btn-danger" type="submit">Remover</button>
+        </form>
+    </div>
+</div>
+{% endblock conteudo %}
